@@ -61,8 +61,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
     --color-page: #010A10;
-    --color-primary: #8400ff;
-    --color-primary-alt: #af13fd;
+    --color-primary: #14e6ed;
+    --color-primary-alt: #ea00ff;
     --color-primary-2nd: #FF494A;
     --color-primary-3rd: #FDC448;
     --color-primary-4th: #8400ff;
@@ -80,17 +80,17 @@
     --color-card-wrapper: #010a10;
     --color-card: #06131b;
     --gradient-box: linear-gradient(to right, var(--color-primary), #FF014F);
-    --gradient-one: linear-gradient(to right bottom, #E42032, #af13fd);
-    --gradient-two: linear-gradient(to right, #ED145B, #af13fd);
-    --gradient-three: linear-gradient(to right, #03041c, #af13fd);
-    --text-gradient-one: linear-gradient(to right, #E42032, #af13fd);
-    --stroke-gr: linear-gradient(317deg, #fd1378 0%, rgba(19, 215, 253, 0.2) 38.23%, rgba(19, 191, 253, 0.2) 62.96%, #af13fd 100%);
+    --gradient-one: linear-gradient(to right bottom, #E42032, #1900ff);
+    --gradient-two: linear-gradient(to right, #14e6ed, #ea00ff);
+    --gradient-three: linear-gradient(to right, #03041c, #ea00ff);
+    --text-gradient-one: linear-gradient(to right, #E42032, #ea00ff);
+    --stroke-gr: linear-gradient(317deg, #14e6ed 0%, rgba(19, 215, 253, 0.2) 38.23%, rgba(19, 191, 253, 0.2) 62.96%, #af13fd 100%);
     --stroke-gradient-2: radial-gradient(92.46% 222.14% at 15.65% -7.58%, rgba(127, 226, 251, 0.20) 0%, rgba(127, 226, 251, 0.02) 100%);
-    --icon-gradient: linear-gradient(315deg, #fd1378 0%, #af13fd 100%);
+    --icon-gradient: linear-gradient(315deg, #14e6ed 0%, #ea00ff 100%);
     --gradient-none: linear-gradient(red 0 0);
     --full: linear-gradient(red 0 0);
-    --shadow-1: 0 2px 22px #fd1378;
-    --theme-gradient: linear-gradient(312deg, #fd1378 0%, #af13fd 100%);
+    --shadow-1: 0 2px 22px #14e6ed;
+    --theme-gradient: linear-gradient(312deg, #14e6ed 0%, #ea00ff 100%);
     --color-heading: #ffffff;
     --color-body: #d6d6d6;
     --color-dark: #1d1d1d;
@@ -116,7 +116,7 @@
     --color-youtube: #ED4141;
     --color-linkedin: #0077B5;
     --color-pinterest: #E60022;
-    --color-instagram: #C231A1;
+    --color-instagram: #14e6ed;
     --color-vimeo: #00ADEF;
     --color-twitch: #6441A3;
     --color-discord: #7289da;
@@ -5737,6 +5737,7 @@ button,
 [type=reset],
 [type=submit] {
     -webkit-appearance: button;
+    appearance: button;
 }
 
 input {
@@ -6850,24 +6851,28 @@ input:-moz-placeholder,
 textarea:-moz-placeholder {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
 }
 
 /*=============================
@@ -11548,7 +11553,15 @@ body.sal-disabled [data-sal|=flip] {
 }
 
 .header-one .header-content .logo {
-    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.header-one .header-content .logo h4 {
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 .header-one .header-content .logo img {
@@ -14750,7 +14763,7 @@ header.header-full-width.header--sticky.sticky {
     }
 }
 
-@keyframes up-dow-2 {
+@keyframes up-down-2 {
     0% {
         transform: translateY(-10px);
     }
@@ -16287,6 +16300,7 @@ Section Head
     z-index: 1;
     -webkit-mask: var(--gradient-none) padding-box, var(--gradient-none);
     -webkit-mask-composite: xor;
+    mask-composite: exclude;
     mask: var(--gradient-none) padding-box exclude, var(--gradient-none);
 }
 
@@ -16303,6 +16317,7 @@ Section Head
 .section-head .subtitle.color-gradiant {
     background: var(--text-gradient-one);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -17329,6 +17344,7 @@ Section Head
     padding: 2px;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
     -webkit-mask-composite: destination-out;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) padding-box;
     mask-composite: exclude;
     border-radius: 500px;
 }
@@ -21030,7 +21046,7 @@ section.clients-testimonial-area {
     }
 }
 
-@keyframes up-dow-2 {
+@keyframes up-down-2 {
     0% {
         transform: translateY(-10px);
     }
@@ -23372,6 +23388,7 @@ section.clients-testimonial-area {
     opacity: 0;
     background: var(--color-primary);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     left: 0;
     top: 0;
@@ -26142,6 +26159,7 @@ section.svg-container svg.radial-progress:nth-last-of-type(0) {
     justify-content: center;
     background: linear-gradient(-225deg, #FF057C 0%, #FF057C 40%, #321575 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
 }
@@ -28719,6 +28737,7 @@ Primary style
     background-clip: border-box;
     -webkit-mask: var(--full) padding-box, var(--full);
     -webkit-mask-composite: xor;
+    mask-composite: exclude;
     mask: var(--full) padding-box exclude, var(--full);
     pointer-events: none;
     background: var(--stroke-gr) border-box;
@@ -31508,6 +31527,7 @@ body.white-version .card-greeting p {
     background-clip: border-box;
     -webkit-mask: var(--full) padding-box, var(--full);
     -webkit-mask-composite: xor;
+    mask-composite: exclude;
     mask: var(--full) padding-box exclude, var(--full);
     pointer-events: none;
     background: var(--stroke-gr) border-box;
@@ -31660,6 +31680,7 @@ body.white-version .card-greeting p {
     background-clip: border-box;
     -webkit-mask: var(--full) padding-box, var(--full);
     -webkit-mask-composite: xor;
+    mask-composite: exclude;
     mask: var(--full) padding-box exclude, var(--full);
     pointer-events: none;
     background: linear-gradient(127deg, #7ee1fa 0%, rgba(126, 225, 250, 0) 15.02%, rgba(126, 225, 250, 0) 100%) border-box, linear-gradient(-53deg, #7ee1fa 0%, rgba(126, 225, 250, 0) 15.02%, rgba(126, 225, 250, 0) 100%) border-box;
@@ -31923,6 +31944,7 @@ button.close {
     background-color: transparent;
     border: 0;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .close {

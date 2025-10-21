@@ -20,6 +20,14 @@
 
     // Set up an event listener for the contact form.
     $(form).submit(function(e) {
+        // Check if using FormSubmit (will redirect automatically)
+        var action = $(form).attr('action');
+        if (action.includes('formsubmit.co')) {
+            // Let FormSubmit handle it naturally
+            return true;
+        }
+
+        // For PHP mailer, use AJAX
         // Stop the browser from submitting the form.
         e.preventDefault();
 
@@ -41,7 +49,7 @@
                 $(formMessages).text(response);
 
                 // Clear the form.
-                $('#name, #email,  #subject, #message').val('');
+                $('#contact-name, #contact-email, #contact-phone, #subject, #contact-message').val('');
             })
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
