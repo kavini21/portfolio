@@ -16648,6 +16648,12 @@ Section Head
     line-height: 1.2;
 }
 
+/* Only affect the "Download CV" button */
+.download-cv-btn {
+    /* Override primary color just for this element */
+    --color-primary: #229ea2;
+}
+
 .tmp-btn.tmp-marquee-btn span::after {
     content: attr(data-text);
     position: absolute;
